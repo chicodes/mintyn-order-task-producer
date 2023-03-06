@@ -22,8 +22,8 @@ WORKDIR /app
 
 # COPY config/configs-dev.properties config/
 
-COPY --from=build /app/target/mintyn-order-producer-task.jar mintyn-order-producer-task-0.0.1.jar
+COPY --from=build /app/target/mintyn-producer-0.0.1.jar mintyn-producer-0.0.1.jar
 
-EXPOSE 1800
+EXPOSE 1836
 
-ENTRYPOINT ["java","-jar","mintyn-order-producer-task-0.0.1.jar"]
+ENTRYPOINT ["java","-jar","mintyn-producer-0.0.1.jar"]

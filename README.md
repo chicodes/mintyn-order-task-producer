@@ -14,7 +14,16 @@
 ### Database :
 
     Mysql Databse
+
 &nbsp;
+
+
+### Apache Kafka Set-Up:
+
+make sure you have Apache Kafka running, if you don't please follow the link below to get Apache Kafka running locally
+
+https://medium.com/@Ankitthakur/apache-kafka-installation-on-mac-using-homebrew-a367cdefd273
+
 
 ### How to run :
 
