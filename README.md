@@ -13,7 +13,7 @@
 
 ### Database :
 
-    Mysql Databse
+    Mysql Database
 
 &nbsp;
 
@@ -37,7 +37,7 @@ If you have docker installed, bring up your terminal, navigate to the root direc
 
 * To run the code run the command below--
 
-  docker run -it -p 1800:81 mintynproducer
+  docker run -it -p 1836:81 mintynproducer
 
 #### Option 2 (Run from IDE)
 
@@ -48,10 +48,10 @@ https://www.youtube.com/watch?v=kQ6Zkb6s6mM
 
 ### Link to Postman collection
 
-https://we.tl/t-Om9f7IAh6j
+https://we.tl/t-EhXkSuIuxT
 
 ### Link to Swagger documentation
-http://localhost:1800/swagger-ui.html#/
+http://localhost:1836/swagger-ui.html#/
 
 
 ### Things I would have done better if I had more time
