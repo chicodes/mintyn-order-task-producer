@@ -16,9 +16,6 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-
-    private String imageLink;
-
     private BigDecimal price ;
 
     private String currencyCode;
