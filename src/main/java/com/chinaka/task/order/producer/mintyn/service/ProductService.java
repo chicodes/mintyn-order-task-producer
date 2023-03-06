@@ -12,7 +12,4 @@ public interface ProductService {
     GenericResponse listProduct(int pageNo, int pageSize);
 
     GenericResponse updateProduct(String id, ProductDto request);
-
-    GenericResponse deleteProduct(String id);
-
 }

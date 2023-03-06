@@ -1,10 +1,8 @@
 package com.chinaka.task.order.producer.mintyn.service;
 
-import com.chinaka.task.order.producer.mintyn.dto.*;
 import com.chinaka.task.order.producer.mintyn.dto.ProductDto;
 import com.chinaka.task.order.producer.mintyn.model.Product;
 import com.chinaka.task.order.producer.mintyn.repository.ProductRepository;
-import com.chinaka.task.order.producer.mintyn.util.*;
 import com.chinaka.task.order.producer.mintyn.util.Constants;
 import com.chinaka.task.order.producer.mintyn.validation.ProductExistException;
 import com.chinaka.task.order.producer.mintyn.dto.GenericResponse;
@@ -12,7 +10,6 @@ import com.chinaka.task.order.producer.mintyn.util.ResponseHelper;
 import com.chinaka.task.order.producer.mintyn.util.Utility;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
@@ -116,20 +113,6 @@ public class ProductServiceImpl implements ProductService{
             return responseHelper.getResponse(EXPECTATION_FAILED, PRODUCT_NOT_FOUND, null, HttpStatus.EXPECTATION_FAILED);
         }
         catch(Exception e){
-            return responseHelper.getResponse(FAILED_CODE, e.getMessage(), "", HttpStatus.EXPECTATION_FAILED);
-        }
-    }
-
-    @CacheEvict(cacheNames = {"productCache"}, key = "#id")
-    @Override
-    public GenericResponse deleteProduct(String id) {
-        try {
-            Product getProduct = productRepository.findById(Long.valueOf(id))
-                    .orElse(new Product());
-            log.info("deleting order");
-            productRepository.delete(getProduct);
-            return responseHelper.getResponse(SUCCESS_CODE, SUCCESS, null, HttpStatus.OK);
-        }catch(Exception e){
             return responseHelper.getResponse(FAILED_CODE, e.getMessage(), "", HttpStatus.EXPECTATION_FAILED);
         }
     }
